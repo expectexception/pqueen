@@ -176,8 +176,28 @@ async function startNextServer() {
       }
     }
 
-    // Launch server using node
-    serverProcess = spawn("node", [serverScript], {
+    // In Electron, process.execPath is the Electron executable itself (e.g. PQN Party Queen.exe).
+    // Setting ELECTRON_RUN_AS_NODE: "1" runs it as a standalone Node.js runtime without needing system Node!
+    const nodeBinary = process.execPath;
+    const serverEnv = {
+      ...process.env,
+      ELECTRON_RUN_AS_NODE: "1",
+      PORT: activePort.toString(),
+      HOSTNAME: "127.0.0.1",
+      NODE_ENV: "production",
+      DESKTOP_MODE: "true",
+    };
+
+    console.log(`[Electron] Spawning server via embedded Node (${nodeBinary})...`);
+
+    const logDir = app.getPath("userData");
+    if (!fs.existsSync(logDir)) {
+      try { fs.mkdirSync(logDir, { recursive: true }); } catch (e) {}
+    }
+    const logFile = path.join(logDir, "server.log");
+    const logStream = fs.createWriteStream(logFile, { flags: "a" });
+
+    serverProcess = spawn(nodeBinary, [serverScript], {
       cwd: serverCwd,
       env: serverEnv,
       stdio: ["ignore", "pipe", "pipe"],
@@ -186,14 +206,22 @@ async function startNextServer() {
 
     serverProcess.stdout.on("data", (data) => {
       console.log(`[Server] ${data}`);
+      try { logStream.write(`[Server] ${data}\n`); } catch (e) {}
     });
 
     serverProcess.stderr.on("data", (data) => {
       console.error(`[Server Error] ${data}`);
+      try { logStream.write(`[Server Error] ${data}\n`); } catch (e) {}
+    });
+
+    serverProcess.on("error", (err) => {
+      console.error(`[Server Process Error]`, err);
+      try { logStream.write(`[Server Process Error] ${err.message}\n`); } catch (e) {}
     });
 
     serverProcess.on("exit", (code, signal) => {
       console.log(`[Server] Exited with code ${code}, signal ${signal}`);
+      try { logStream.write(`[Server Exited] code=${code} signal=${signal}\n`); } catch (e) {}
     });
 
     checkServerReady(serverUrl)
