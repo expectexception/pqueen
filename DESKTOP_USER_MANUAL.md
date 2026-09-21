@@ -6,7 +6,16 @@ Welcome to the **PQN PARTY QUEEN Windows Desktop Edition**. This manual provides
 
 ## 📥 1. Installation & Quick Launch
 
-### Option A: Install via Setup Wizard (Recommended)
+### Option A: Install via Native Windows MSI Installer (Recommended)
+1. Locate the `.msi` file in your project directory:
+   ```
+   release\PQN Party Queen-Setup-0.1.0.msi
+   ```
+2. Double-click **`PQN Party Queen-Setup-0.1.0.msi`**.
+3. Follow the standard Windows Installer dialog to install into Program Files.
+4. The installer automatically registers the application and adds a shortcut to your **Desktop** and **Start Menu**.
+
+### Option B: Install via Setup Wizard (.exe)
 1. Locate the setup file in your project directory:
    ```
    release\PQN Party Queen-Setup-0.1.0.exe
@@ -15,14 +24,6 @@ Welcome to the **PQN PARTY QUEEN Windows Desktop Edition**. This manual provides
 3. Follow the setup wizard to choose your installation directory (e.g. `C:\Program Files\PQN Party Queen`).
 4. Check **Create Desktop Shortcut**.
 5. Once completed, launch the application from your **Desktop** or **Start Menu**.
-
-### Option B: Standalone Portable Launch (No Installation Required)
-If you prefer running the software without going through an installation process:
-1. Navigate to:
-   ```
-   release\win-unpacked\PQN Party Queen.exe
-   ```
-2. Double-click **`PQN Party Queen.exe`** to launch immediately.
 
 ---
 

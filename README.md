@@ -14,13 +14,13 @@
 
 ---
 
-## 📦 Windows Desktop Software (.exe)
+## 📦 Windows Desktop Software (.msi & .exe)
 
-The desktop edition packages the entire Next.js full-stack platform into a standalone Windows installer and portable application.
+The desktop edition packages the entire Next.js full-stack platform into a standalone native Windows Installer (`.msi`) and executable package.
 
 ### 🚀 Generated Installers in `release/`:
-- **Setup Wizard:** `release/PQN Party Queen-Setup-0.1.0.exe` (Interactive NSIS installer with desktop & start menu shortcuts)
-- **Portable App:** `release/win-unpacked/PQN Party Queen.exe` (Instant zero-install executable)
+- **Native Windows MSI Installer (Recommended):** `release/PQN Party Queen-Setup-0.1.0.msi` (329 MB single-file Windows Installer package)
+- **Setup Wizard (.exe):** `release/PQN Party Queen-Setup-0.1.0.exe` (Interactive NSIS installer with desktop & start menu shortcuts)
 
 ### ⌨️ Desktop Terminal Commands:
 ```powershell
@@ -30,10 +30,13 @@ npm run desktop:seed
 # Launch the Electron desktop shell in development
 npm run desktop:dev
 
-# Build standalone Next.js bundle and package final Windows .exe installer
+# Build standalone Next.js bundle and package native Windows .msi installer
+npm run desktop:msi
+
+# Build standalone Next.js bundle and package Windows installer
 npm run desktop:build
 
-# Quick-pack existing build into .exe without recompiling Next.js
+# Quick-pack existing build without recompiling Next.js
 npm run desktop:pack
 ```
 
