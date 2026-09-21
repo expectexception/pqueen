@@ -1,0 +1,143 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 2949 >>
+stream
+
+0.03 0.16 0.10 rg 0 740 595.28 102 re f
+1 0.84 0.50 rg /F2 9.5 Tf 45 805 Td (PQN PARTY QUEEN - HAUTE COUTURE ATELIER) Tj
+1 1 1 rg /F2 18 Tf 0 -22 Td (E-Commerce Client Handover & Maintenance Manual) Tj
+0.82 0.98 0.90 rg /F1 9 Tf 0 -18 Td (Complete Technical Operations, Self-Editing, SMS Setup & Deployment Guide) Tj
+
+0.60 0.45 0.09 rg /F2 9 Tf 45 705 Td (SECTION 01) Tj
+0.03 0.16 0.10 rg /F2 13 Tf 0 -16 Td (Architecture Overview & Database Safety) Tj
+0.8 0.8 0.8 RG 1 w 45 683 m 550 683 l S
+
+0.12 0.16 0.22 rg /F1 9.5 Tf 45 665 Td (PQN Party Queen is built on an enterprise Next.js full-stack architecture with PostgreSQL.) Tj
+0.03 0.16 0.10 rg /F2 10.5 Tf 0 -18 Td (Why Hostinger File Manager only shows public_html:) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -14 Td (Next.js runs as a Node.js background server process inside /home/u375327955/pqn-app on port 34849.) Tj
+0 -12 Td (The public_html folder contains a proxy bridge forwarding live web traffic to the running Node server.) Tj
+
+0.92 0.99 0.96 rg 0.65 0.95 0.81 RG 45 575 505 50 re B
+0.02 0.37 0.27 rg /F2 9.5 Tf 55 608 Td (CRITICAL DATA SAFETY GUARANTEE) Tj
+0.02 0.47 0.34 rg /F1 8.5 Tf 0 -14 Td (All customer accounts, orders, reviews, addresses, and catalog data are stored on Supabase PostgreSQL.) Tj
+0 -11 Td (You can edit code, rebuild, and re-deploy 1,000 times without ever losing any customer data!) Tj
+
+0.60 0.45 0.09 rg /F2 9 Tf 45 540 Td (SECTION 02) Tj
+0.03 0.16 0.10 rg /F2 13 Tf 0 -16 Td (How to Add Real Mobile SMS Later (Fast2SMS / 2Factor / MSG91)) Tj
+0.8 0.8 0.8 RG 1 w 45 518 m 550 518 l S
+
+0.12 0.16 0.22 rg /F1 9 Tf 45 500 Td (Real Email OTP delivery is already 100% active via connected Gmail SMTP. To add mobile phone SMS:) Tj
+0.03 0.16 0.10 rg /F2 10 Tf 0 -16 Td (Step 1: Obtain an SMS API Key from Fast2SMS.com) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Sign up at Fast2SMS.com (takes 10 seconds). Copy your 'Authorization Key' from the Dev API page.) Tj
+0.03 0.16 0.10 rg /F2 10 Tf 0 -16 Td (Step 2: Update .env on Hostinger via SSH) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Connect to Hostinger via PowerShell / Terminal and update your .env configuration:) Tj
+
+0.95 0.96 0.97 rg 0.82 0.84 0.86 RG 45 355 505 60 re B
+0.06 0.09 0.16 rg /F1 8.5 Tf 55 398 Td (ssh -p 65002 u375327955@82.25.107.10) Tj
+0 -12 Td (nano /home/u375327955/pqn-app/.env) Tj
+0 -12 Td (OTP_SMS_PROVIDER="FAST2SMS") Tj
+0 -12 Td (FAST2SMS_API_KEY="PASTE_YOUR_FAST2SMS_API_KEY_HERE") Tj
+
+0.03 0.16 0.10 rg /F2 10 Tf 45 332 Td (Step 3: Restart the Live Server) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Run this single command to apply changes instantly:) Tj
+
+0.95 0.96 0.97 rg 0.82 0.84 0.86 RG 45 285 505 28 re B
+0.06 0.09 0.16 rg /F1 8 Tf 55 299 Td (pkill -9 -f "server.js" && nohup node /home/u375327955/pqn-app/server.js > /home/u375327955/pqn-app/app.log 2>&1 &) Tj
+
+0.8 0.8 0.8 RG 1 w 45 60 m 550 60 l S
+0.4 0.4 0.4 rg /F1 8 Tf 45 45 Td (PQN Party Queen Atelier Storefront Engine - Page 1 of 2) Tj
+
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 3534 >>
+stream
+
+0.03 0.16 0.10 rg 0 780 595.28 62 re f
+1 1 1 rg /F2 14 Tf 45 805 Td (Self-Editing, 1-Click Deployment & Store Operations) Tj
+
+0.60 0.45 0.09 rg /F2 9 Tf 45 745 Td (SECTION 03) Tj
+0.03 0.16 0.10 rg /F2 13 Tf 0 -16 Td (How to Edit Features & Deploy Without AI Assistance) Tj
+0.8 0.8 0.8 RG 1 w 45 723 m 550 723 l S
+
+0.12 0.16 0.22 rg /F1 9 Tf 45 705 Td (You have full independence to edit code, add new pages, change banners, or adjust styles locally.) Tj
+0.03 0.16 0.10 rg /F2 10 Tf 0 -16 Td (Step 1: Edit Files Locally in VS Code) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Open your project folder in VS Code. Modify pages in 'app/' or components in 'app/components/'.) Tj
+0.03 0.16 0.10 rg /F2 10 Tf 0 -16 Td (Step 2: Build the Production Package) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Open PowerShell in your project directory and run:   npx next build --webpack) Tj
+0.03 0.16 0.10 rg /F2 10 Tf 0 -16 Td (Step 3: 1-Click Automated Live Deployment) Tj
+0.12 0.16 0.22 rg /F1 9 Tf 0 -13 Td (Run the automated deployment script to update the live server in 20 seconds:) Tj
+
+0.95 0.96 0.97 rg 0.82 0.84 0.86 RG 45 540 505 26 re B
+0.06 0.09 0.16 rg /F1 8.5 Tf 55 553 Td (node scratch/deploy-and-test-live.js) Tj
+
+0.60 0.45 0.09 rg /F2 9 Tf 45 505 Td (SECTION 04) Tj
+0.03 0.16 0.10 rg /F2 13 Tf 0 -16 Td (Admin Panel Credentials & Store Management) Tj
+0.8 0.8 0.8 RG 1 w 45 483 m 550 483 l S
+
+0.12 0.16 0.22 rg /F1 9 Tf 45 465 Td (Your client can manage 100% of store operations through the built-in luxury Admin Suite:) Tj
+
+0.95 0.96 0.97 rg 0.82 0.84 0.86 RG 45 385 505 65 re B
+0.06 0.09 0.16 rg /F1 8.5 Tf 55 432 Td (Admin Login URL:  https://pqnpartyqueen.com/admin/login) Tj
+0 -13 Td (Admin Email:      P4RTYqueen@gmail.com) Tj
+0 -13 Td (Admin Password:   Karan@123) Tj
+0 -13 Td (Storefront URL:   https://pqnpartyqueen.com) Tj
+
+0.03 0.16 0.10 rg /F2 9.5 Tf 45 365 Td (Core Capabilities in Admin Panel:) Tj
+0.12 0.16 0.22 rg /F1 8.5 Tf 0 -13 Td (- Products & Catalog: Add/edit Lehengas, Sarees, Gowns, stock, prices, and catwalk videos.) Tj
+0 -11 Td (- Orders & Shipping: Update fulfillment status (Pending, Shipped, Delivered), generate invoices.) Tj
+0 -11 Td (- Customer CRM: View registered members, verified badges, contact details, and lifetime value (LTV).) Tj
+0 -11 Td (- Coupons & Promos: Create discount codes, flat reductions, or percentage campaigns.) Tj
+0 -11 Td (- Banners & Lookbooks: Manage hero slider images, spotlight collections, and bridal looks.) Tj
+0 -11 Td (- Customer Reviews: Moderate buyer ratings, reviews, and customer try-on photos.) Tj
+
+0.60 0.45 0.09 rg /F2 9 Tf 45 255 Td (SECTION 05) Tj
+0.03 0.16 0.10 rg /F2 13 Tf 0 -16 Td (Security Safeguards & Customer Authentication) Tj
+0.8 0.8 0.8 RG 1 w 45 233 m 550 233 l S
+
+0.12 0.16 0.22 rg /F1 8.5 Tf 45 215 Td (1. Cryptographic HMAC SHA-256 Hashing: Plaintext OTP codes are NEVER stored in the database.) Tj
+0 -11 Td (2. 5-Minute Expiration: Strict TTL expiration on verification codes.) Tj
+0 -11 Td (3. Attempt Limiting: Auto-lockout after 5 incorrect OTP attempts to block brute-force attacks.) Tj
+0 -11 Td (4. Single-Use Consumption: Codes are destroyed upon verification to prevent replay.) Tj
+0 -11 Td (5. Google OAuth SSO: Seamless 1-click Google authentication active.) Tj
+0 -11 Td (6. Mandatory Checkout Auth Gate: Ensures every placed order has verified customer contact details.) Tj
+
+0.8 0.8 0.8 RG 1 w 45 60 m 550 60 l S
+0.4 0.4 0.4 rg /F1 8 Tf 45 45 Td (PQN Party Queen Atelier Storefront Engine - Page 2 of 2 | Confidential & Proprietary) Tj
+
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000003267 00000 n 
+0000003409 00000 n 
+0000006995 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+7137
+%%EOF

@@ -1,0 +1,327 @@
+{
+  "storeName": "PQN PARTY QUEEN",
+  "tagline": "Haute Couture & Luxury Indian Fashion",
+  "supportEmail": "support@pqnpartyqueen.com",
+  "conciergeWhatsApp": "+91 98765 43210",
+  "currency": "INR (₹)",
+  "storeAddress": "108, Haute Couture Enclave, Fashion Boulevard, Connaught Place, New Delhi - 110001, India",
+  "announcementText": "✦ COMPLIMENTARY EXPRESS SHIPPING ACROSS INDIA • USE CODE PQN10 FOR 10% OFF ✦",
+  "maintenanceMode": {
+    "enabled": false,
+    "title": "Atelier Private Preview & Scheduled Runway Upgrades",
+    "message": "Our digital atelier is currently undergoing curated runway updates. We are preparing our newest collections and will reopen shortly.",
+    "estimatedReopenTime": "Today at 6:00 PM IST",
+    "allowAdminBypass": true,
+    "emergencyWhatsApp": "+91 98765 43210"
+  },
+  "gstin": "07AAACP9876Q1Z2",
+  "panNumber": "AAACP9876Q",
+  "defaultGSTRate": 12,
+  "invoiceOwnerSignatureUrl": "/images/authorized-signature.svg",
+  "invoiceSignatoryName": "Karan Oberoi",
+  "invoiceSignatoryTitle": "Authorized Signatory",
+  "invoiceCompanyName": "PQN PARTY QUEEN",
+  "metaPixelId": "128492019482019",
+  "metaPixelEnabled": true,
+  "socialLinks": {
+    "twitter": {
+      "url": "https://x.com/pqnpartyqueen",
+      "handle": "@pqnpartyqueen",
+      "enabled": false
+    },
+    "youtube": {
+      "url": "https://youtube.com/@pqnpartyqueen",
+      "handle": "@pqnpartyqueen",
+      "enabled": false
+    },
+    "facebook": {
+      "url": "https://facebook.com/pqnpartyqueen",
+      "handle": "PQN Party Queen",
+      "enabled": true
+    },
+    "whatsapp": {
+      "url": "https://wa.me/919876543210",
+      "handle": "+91 98765 43210",
+      "enabled": true
+    },
+    "instagram": {
+      "url": "https://www.expectexception.com",
+      "handle": "@pqnpartyqueen",
+      "enabled": true
+    },
+    "pinterest": {
+      "url": "https://pinterest.com/pqnpartyqueen",
+      "handle": "pqnpartyqueen",
+      "enabled": true
+    }
+  },
+  "activeVoucherCode": "PQN10",
+  "voucherDiscountPercent": 10,
+  "freeShippingMinimum": 0,
+  "defaultDeliveryPartner": "Blue Dart Express",
+  "deliveryPartners": [
+    {
+      "name": "Blue Dart Express",
+      "enabled": true,
+      "trackingUrlPrefix": "https://www.bluedart.com/tracking?awb="
+    },
+    {
+      "name": "Delhivery Air Express",
+      "enabled": true,
+      "trackingUrlPrefix": "https://www.delhivery.com/track/package/"
+    },
+    {
+      "name": "DTDC Prime Gold",
+      "enabled": false,
+      "trackingUrlPrefix": "https://www.dtdc.in/tracking/"
+    },
+    {
+      "name": "Shiprocket Smart Courier",
+      "enabled": true,
+      "trackingUrlPrefix": "https://shiprocket.co/tracking/"
+    }
+  ],
+  "shippingZones": [
+    {
+      "name": "All India Standard (Complimentary)",
+      "rate": 0,
+      "enabled": true,
+      "estimatedDays": "3-5 business days"
+    },
+    {
+      "name": "Metro Express Priority (Same/Next Day)",
+      "rate": 299,
+      "enabled": true,
+      "estimatedDays": "24-48 hours"
+    },
+    {
+      "name": "International Global Luxury Courier (DHL/FedEx)",
+      "rate": 2499,
+      "enabled": true,
+      "estimatedDays": "5-7 business days"
+    }
+  ],
+  "shippingEngineSettings": {
+    "providers": {
+      "dtdc": {
+        "id": "dtdc",
+        "name": "DTDC Prime Gold",
+        "description": "Direct DTDC enterprise express logistics",
+        "website": "https://www.dtdc.in",
+        "enabled": false,
+        "connected": false,
+        "priority": 7,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "express",
+          "cod"
+        ]
+      },
+      "ithink": {
+        "id": "ithink",
+        "name": "iThink Logistics",
+        "description": "AI-driven logistics aggregator with live multi-courier dispatch (Delhivery, Blue Dart, Xpressbees)",
+        "website": "https://www.ithinklogistics.com",
+        "enabled": true,
+        "connected": true,
+        "priority": 1,
+        "credentials": {
+          "accessKey": "85fec8bccd7fafd40a9ed5d486080cb8",
+          "apiSecret": "6fae1c13bc110ed5b42cb84dc2b533c8",
+          "pickupAddressId": "123718",
+          "warehouseId": "123718",
+          "pickupLocationName": "VIJAY SINGH - WZ 147 A D BLOCK 2 FIR ARYA SMAJ ROAD UTTAM NAGAR NEW DELHI 110059"
+        },
+        "supportedModes": [
+          "surface",
+          "express",
+          "air",
+          "cod"
+        ],
+        "lastTestedAt": "2026-09-16T11:14:56.293Z"
+      },
+      "manual": {
+        "id": "manual",
+        "name": "Custom / Private Courier",
+        "description": "Manual AWB entry for bespoke couriers",
+        "website": "https://pqnpartyqueen.com",
+        "enabled": true,
+        "connected": true,
+        "priority": 99,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "air",
+          "express",
+          "cod"
+        ]
+      },
+      "bluedart": {
+        "id": "bluedart",
+        "name": "Blue Dart Express",
+        "description": "Direct enterprise Air & Apex Courier integration",
+        "website": "https://www.bluedart.com",
+        "enabled": false,
+        "connected": false,
+        "priority": 6,
+        "credentials": {},
+        "supportedModes": [
+          "air",
+          "express",
+          "cod"
+        ]
+      },
+      "shipmozo": {
+        "id": "shipmozo",
+        "name": "Shipmozo",
+        "description": "Next-gen multi-carrier shipping automation",
+        "website": "https://shipmozo.com",
+        "enabled": false,
+        "connected": false,
+        "priority": 4,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "air",
+          "cod"
+        ]
+      },
+      "delhivery": {
+        "id": "delhivery",
+        "name": "Delhivery Direct",
+        "description": "Direct enterprise API integration with Delhivery",
+        "website": "https://www.delhivery.com",
+        "enabled": false,
+        "connected": false,
+        "priority": 5,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "express",
+          "cod"
+        ]
+      },
+      "nimbuspost": {
+        "id": "nimbuspost",
+        "name": "NimbusPost",
+        "description": "Advanced automated logistics and shipping aggregator",
+        "website": "https://nimbuspost.com",
+        "enabled": false,
+        "connected": false,
+        "priority": 3,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "air",
+          "express",
+          "cod"
+        ]
+      },
+      "shiprocket": {
+        "id": "shiprocket",
+        "name": "Shiprocket",
+        "description": "India's leading multi-courier logistics aggregator",
+        "website": "https://www.shiprocket.in",
+        "enabled": false,
+        "connected": false,
+        "priority": 2,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "air",
+          "express",
+          "cod"
+        ]
+      },
+      "xpressbees": {
+        "id": "xpressbees",
+        "name": "Xpressbees Direct",
+        "description": "Direct enterprise B2C parcel logistics",
+        "website": "https://www.xpressbees.com",
+        "enabled": false,
+        "connected": false,
+        "priority": 8,
+        "credentials": {},
+        "supportedModes": [
+          "surface",
+          "express",
+          "cod"
+        ]
+      }
+    },
+    "selectionMode": "cheapest",
+    "defaultPackage": {
+      "widthCm": 25,
+      "heightCm": 8,
+      "lengthCm": 30,
+      "weightKg": 0.8
+    },
+    "pickupLocation": {
+      "city": "New Delhi",
+      "name": "PQN Primary Warehouse",
+      "email": "thep4rtyqueen@gmail.com",
+      "phone": "+91 9999999999",
+      "state": "Delhi",
+      "country": "India",
+      "pincode": "110059",
+      "companyName": "PQN Party Queen Luxury Pret",
+      "addressLine1": "Z 147 A DBLOCK 2 FIR ARYA SAMAJ ROAD UTTAM NAGAR",
+      "addressLine2": "Near Arya Samaj Mandir"
+    },
+    "primaryProvider": "ithink",
+    "codAdditionalFee": 0,
+    "standardShippingFee": 0,
+    "fallbackToStandardIfUnavailable": true,
+    "complimentaryFreeShippingThreshold": 0
+  },
+  "paymentGateways": {
+    "cod": {
+      "codFee": 0,
+      "enabled": true,
+      "maxCodAmount": 50000
+    },
+    "upi": {
+      "enabled": true,
+      "vpaAddress": "pqnpartyqueen@icici"
+    },
+    "stripe": {
+      "mode": "test",
+      "enabled": true,
+      "secretKey": "••••••••••••••••",
+      "publishableKey": "pk_test_51PQN..."
+    },
+    "razorpay": {
+      "mode": "live",
+      "keyId": "rzp_live_Tb79L3WjS62yNA",
+      "enabled": true,
+      "keySecret": "Nfx5qbTVBbvb7LFEy9h2MfgK"
+    }
+  },
+  "staffMembers": [
+    {
+      "id": "staff-1",
+      "name": "Karan Oberoi (Super Admin)",
+      "role": "SUPER_ADMIN",
+      "email": "P4RTYqueen@gmail.com",
+      "active": true,
+      "createdAt": "2026-01-01"
+    },
+    {
+      "id": "staff-2",
+      "name": "Pooja Sharma (Couture Stylist & Catalog)",
+      "role": "STORE_MANAGER",
+      "email": "pooja.stylist@pqnpartyqueen.com",
+      "active": true,
+      "createdAt": "2026-02-15"
+    },
+    {
+      "id": "staff-3",
+      "name": "Rohit Verma (Fulfillment Specialist)",
+      "role": "ORDER_SPECIALIST",
+      "email": "rohit.dispatch@pqnpartyqueen.com",
+      "active": true,
+      "createdAt": "2026-03-01"
+    }
+  ]
+}

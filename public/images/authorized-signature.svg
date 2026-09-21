@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <defs>
+    <linearGradient id="sigInk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#092540" />
+      <stop offset="50%" stop-color="#0b3866" />
+      <stop offset="100%" stop-color="#071b30" />
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="url(#sigInk)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 28,78 C 32,55 38,32 44,18 C 45,15 47,16 46,22 C 43,45 40,65 37,88" stroke-width="3.2" />
+    <path d="M 22,28 C 36,24 55,20 62,23" stroke-width="2.5" />
+    <path d="M 62,25 C 54,38 46,50 39,56 C 48,58 60,68 72,82" stroke-width="2.8" />
+    <path d="M 72,80 C 76,72 80,60 86,59 C 91,58 92,67 89,75 C 87,80 93,80 98,73 C 103,66 107,58 112,58 C 117,58 116,68 114,75 C 116,77 122,72 126,65 C 129,59 133,59 135,63 C 137,68 135,76 139,76 C 143,76 148,68 152,60 C 155,54 160,54 162,60 C 163,66 161,75 168,75" stroke-width="2.3" />
+    <path d="M 178,48 C 172,40 182,24 196,25 C 210,26 214,46 205,62 C 196,78 178,82 174,68 C 170,54 186,40 204,44" stroke-width="3" />
+    <path d="M 204,44 C 212,52 216,74 218,76 C 221,78 226,62 232,59 C 238,56 240,68 238,76 C 242,76 248,65 254,61 C 259,57 263,65 261,74 C 265,74 272,62 278,60 C 284,58 288,67 286,75" stroke-width="2.2" />
+    <path d="M 32,86 C 85,83 175,81 292,72 C 304,71 312,74 302,78 C 260,88 160,93 68,92" stroke-width="1.8" />
+    <path d="M 276,73 C 285,71 298,68 306,66" stroke-width="2.6" />
+  </g>
+
+  <g transform="translate(265, 12) scale(0.65)">
+    <circle cx="28" cy="28" r="26" fill="none" stroke="#b48328" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.85" />
+    <circle cx="28" cy="28" r="22" fill="none" stroke="#b48328" stroke-width="1" opacity="0.85" />
+    <text x="28" y="24" font-family="sans-serif" font-size="7" font-weight="900" fill="#b48328" text-anchor="middle" letter-spacing="1">PQN</text>
+    <text x="28" y="34" font-family="sans-serif" font-size="6" font-weight="800" fill="#b48328" text-anchor="middle" letter-spacing="0.5">VERIFIED</text>
+  </g>
+</svg>

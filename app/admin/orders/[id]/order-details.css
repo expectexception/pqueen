@@ -1,0 +1,212 @@
+/* =========================================================
+   PQN PARTY QUEEN
+   ADMIN — ORDER DOSSIER & FULFILLMENT
+   ========================================================= */
+
+.admin-order-details-page {
+  background: transparent;
+  color: var(--color-noir);
+}
+
+.admin-order-details-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* BACK LINK */
+
+.admin-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 14px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.admin-back-link:hover {
+  color: var(--brand-rose);
+}
+
+/* HEADER CARD */
+
+.admin-details-header {
+  display: flex;
+  align-items: center;
+  justifyContent: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 18px;
+}
+
+.admin-order-eyebrow {
+  margin: 0 0 3px;
+  color: var(--brand-rose);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.admin-details-header h1 {
+  margin: 0 0 4px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-noir);
+}
+
+.admin-order-date {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.admin-order-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* GRID LAYOUT */
+
+.admin-details-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-details-card {
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: var(--shadow-xs);
+}
+
+.admin-details-card h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-noir);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ITEMS LIST */
+
+.admin-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-order-item-row {
+  display: flex;
+  align-items: center;
+  justifyContent: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-order-item-row:last-child {
+  border-bottom: none;
+}
+
+.admin-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-noir);
+  margin-bottom: 2px;
+}
+
+.admin-item-meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.admin-item-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-noir);
+}
+
+/* CUSTOMER & SHIPPING INFO */
+
+.admin-info-block {
+  margin-bottom: 14px;
+}
+
+.admin-info-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.admin-info-value {
+  font-size: 13px;
+  color: var(--color-noir);
+  line-height: 1.4;
+}
+
+/* STATUS CHANGER PANEL */
+
+.admin-status-changer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.admin-status-changer select {
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-medium);
+  font-size: 12px;
+  font-weight: 700;
+  background: #fff;
+}
+
+.admin-save-status-btn {
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  background: var(--color-noir);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.admin-save-status-btn:hover {
+  background: var(--brand-rose);
+}
+
+@media (max-width: 768px) {
+  .admin-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

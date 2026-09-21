@@ -1,0 +1,253 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  RETURNED
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  image       String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id              String          @id @default(cuid())
+  name            String
+  slug            String          @unique
+  description     String?
+  sku             String          @unique
+  price           Decimal         @db.Decimal(10, 2)
+  salePrice       Decimal?        @db.Decimal(10, 2)
+  videoUrl        String?
+  status          ProductStatus   @default(DRAFT)
+
+  // Physical Package Dimensions & Weight for Shipping / iThink Logistics
+  weight          Decimal?        @default(0.8) @db.Decimal(10, 3) // in kg (e.g. 0.800 = 800g)
+  length          Decimal?        @default(30) @db.Decimal(10, 2)  // in cm
+  width           Decimal?        @default(25) @db.Decimal(10, 2)  // in cm
+  height          Decimal?        @default(8) @db.Decimal(10, 2)   // in cm
+
+  categoryId      String
+  category        Category        @relation(fields: [categoryId], references: [id])
+
+  images          ProductImage[]
+  variants        ProductVariant[]
+  reviews         Review[]
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+enum ReviewStatus {
+  APPROVED
+  PENDING
+  REJECTED
+}
+
+model Review {
+  id           String       @id @default(cuid())
+  rating       Int          // 1 to 5
+  title        String
+  comment      String
+  authorName   String
+  authorEmail  String
+  isVerified   Boolean      @default(true)
+  status       ReviewStatus @default(APPROVED)
+  images       String[]
+  helpfulVotes Int          @default(0)
+
+  productId    String
+  product      Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@index([productId, status])
+}
+
+model ProductImage {
+  id          String   @id @default(cuid())
+  url         String
+  altText     String?
+  sortOrder   Int      @default(0)
+  color       String?
+
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model ProductVariant {
+  id          String   @id @default(cuid())
+  size        String
+  color       String?
+  stock       Int      @default(0)
+
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  @@unique([productId, size, color])
+}
+
+model Customer {
+  id              String    @id @default(cuid())
+  name            String
+  email           String    @unique
+  phone           String?
+  avatar          String?
+  googleId        String?   @unique
+  passwordHash    String?
+  emailVerifiedAt DateTime?
+  phoneVerifiedAt DateTime?
+
+  // Bespoke Sizing & Measurements Profile (Inches / Height)
+  bustSize     String?
+  waistSize    String?
+  hipSize      String?
+  height       String?
+
+  orders       Order[]
+  addresses    Address[]
+
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Address {
+  id          String    @id @default(cuid())
+  customerId  String
+  customer    Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  tag         String    @default("Home") // Home, Office, Atelier, Bridal Suite
+  name        String
+  phone       String
+  street      String
+  city        String
+  state       String
+  pincode     String
+  country     String    @default("India")
+  isDefault   Boolean   @default(false)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique
+
+  customerId      String
+  customer        Customer      @relation(fields: [customerId], references: [id])
+
+  status          OrderStatus   @default(PENDING)
+  totalAmount     Decimal       @db.Decimal(10, 2)
+
+  shippingName    String
+  shippingPhone   String
+  shippingAddress String
+  shippingCity    String
+  shippingState   String
+  shippingPincode String
+
+  // Logistics & Fulfillment (iThink Logistics / Real Courier AWB & Tracking)
+  awbNumber       String?
+  courierName     String?
+  trackingUrl     String?
+  shippingStatus  String?
+  shippingError   String?
+  ithinkOrderId   String?
+  shippingLabelUrl String?
+
+  // Payment Details (Prepaid / Razorpay / Cash on Delivery)
+  paymentMethod   String?       @default("PREPAID")
+  paymentStatus   String?       @default("PAID")
+  razorpayPaymentId String?
+  razorpayOrderId   String?
+
+  // Delivery & 5-Day Return Policy Tracking
+  deliveredAt       DateTime?
+  returnRequestedAt DateTime?
+  returnReason      String?
+  returnStatus      String?
+
+  items           OrderItem[]
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+model OrderItem {
+  id          String   @id @default(cuid())
+
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  productId   String
+  productName String
+  size        String?
+  color       String?
+  quantity    Int
+  price       Decimal  @db.Decimal(10, 2)
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model OtpVerification {
+  id            String    @id @default(cuid())
+  identifier    String    @default("") // Normalized email or 10-digit phone
+  email         String?   // Legacy backward-compat field
+  codeHash      String    @default("") // Cryptographic SHA-256 hash (NEVER plaintext)
+  otp           String?   // Optional legacy field (null for new OTPs)
+  purpose       String    // REGISTER, LOGIN, FORGOT_PASSWORD, ADMIN_FORGOT_PASSWORD, CHANGE_EMAIL, CHANGE_PHONE
+  channel       String    @default("EMAIL") // EMAIL or SMS
+  attempts      Int       @default(0)
+  maxAttempts   Int       @default(5)
+  cooldownUntil DateTime?
+  verifiedAt    DateTime?
+  isConsumed    Boolean   @default(false)
+  ipAddress     String?
+  userAgent     String?
+  expiresAt     DateTime
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now()) @updatedAt
+
+  @@index([identifier, purpose])
+  @@index([identifier, createdAt])
+}
+
+model SystemSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @default(now()) @updatedAt
+  createdAt DateTime @default(now())
+}
