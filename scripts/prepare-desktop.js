@@ -41,13 +41,21 @@ if (fs.existsSync(srcEnv) && !fs.existsSync(destEnv)) {
   console.log("  ✓ .env copied.");
 }
 
-// 5. Ensure icon.ico exists for Windows application icon
-const iconIco = path.join(root, "public", "icon.ico");
-const faviconIco = path.join(root, "public", "favicon.ico");
-if (!fs.existsSync(iconIco) && fs.existsSync(faviconIco)) {
-  console.log("▶ Creating public/icon.ico from favicon.ico...");
-  fs.copyFileSync(faviconIco, iconIco);
+// 5. Ensure icon.ico and icon.png exist for Windows application icon
+const destIco = path.join(root, "public", "icon.ico");
+const srcAppIco = path.join(root, "app", "favicon.ico");
+if (fs.existsSync(srcAppIco)) {
+  console.log("▶ Copying app/favicon.ico to public/icon.ico...");
+  fs.copyFileSync(srcAppIco, destIco);
   console.log("  ✓ icon.ico created.");
+}
+
+const destPng = path.join(root, "public", "icon.png");
+const srcAppPng = path.join(root, "app", "icon.png");
+if (fs.existsSync(srcAppPng)) {
+  console.log("▶ Copying app/icon.png to public/icon.png...");
+  fs.copyFileSync(srcAppPng, destPng);
+  console.log("  ✓ icon.png updated.");
 }
 
 console.log("\n================================================================================");

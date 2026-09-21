@@ -191,12 +191,6 @@ export default function OrderDocumentsModal({
       const returnedTrack = data.shipment?.trackingUrl || `https://my.ithinklogistics.com/track?awb=${returnedAwb}`;
       const returnedLabel = data.shipment?.labelUrl || `https://my.ithinklogistics.com/print_label?awb=${returnedAwb}`;
 
-      order.awbNumber = returnedAwb;
-      order.courierName = returnedCourier;
-      order.trackingUrl = returnedTrack;
-      order.shippingLabelUrl = returnedLabel;
-      order.status = "SHIPPED";
-
       setAwbInfo({
         awb: returnedAwb,
         carrier: returnedCourier,
