@@ -1,0 +1,43 @@
+{
+  "appId": "com.pqnpartyqueen.desktop",
+  "productName": "PQN Party Queen",
+  "copyright": "Copyright © 2026 PQN Party Queen Luxury Indian Couture",
+  "directories": {
+    "output": "release"
+  },
+  "asar": false,
+  "files": [
+    "electron/**/*",
+    ".next/standalone/**/*",
+    "public/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "public",
+      "to": "public",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/icon.png",
+    "artifactName": "${productName}-Setup-${version}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "PQN Party Queen"
+  }
+}

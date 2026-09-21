@@ -2,12 +2,18 @@
   "name": "pqnpartyqueen",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "desktop:prepare": "node scripts/prepare-desktop.js",
+    "desktop:seed": "node scripts/seed-desktop-dummy-data.js",
+    "desktop:dev": "electron .",
+    "desktop:build": "next build --webpack && node scripts/prepare-desktop.js && electron-builder --win --x64",
+    "desktop:pack": "node scripts/prepare-desktop.js && electron-builder --win --x64"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.9.1",
@@ -32,9 +38,12 @@
     "@types/nodemailer": "^8.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "electron": "^44.4.3",
+    "electron-builder": "^26.15.3",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wait-on": "^9.1.0"
   }
 }
