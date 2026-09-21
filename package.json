@@ -1,6 +1,8 @@
 {
   "name": "pqnpartyqueen",
   "version": "0.1.0",
+  "description": "PQN Party Queen - Luxury Indian Couture Desktop Application",
+  "author": "PQN Party Queen",
   "private": true,
   "main": "electron/main.js",
   "scripts": {
@@ -13,7 +15,8 @@
     "desktop:seed": "node scripts/seed-desktop-dummy-data.js",
     "desktop:dev": "electron .",
     "desktop:build": "next build --webpack && node scripts/prepare-desktop.js && electron-builder --win --x64",
-    "desktop:pack": "node scripts/prepare-desktop.js && electron-builder --win --x64"
+    "desktop:pack": "node scripts/prepare-desktop.js && electron-builder --win --x64",
+    "desktop:msi": "node scripts/build-msi.js"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.9.1",

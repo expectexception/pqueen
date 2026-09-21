@@ -22,22 +22,19 @@
   "win": {
     "target": [
       {
-        "target": "nsis",
-        "arch": ["x64"]
-      },
-      {
-        "target": "portable",
+        "target": "msi",
         "arch": ["x64"]
       }
     ],
     "icon": "public/icon.ico",
     "artifactName": "${productName}-Setup-${version}.${ext}"
   },
-  "nsis": {
+  "msi": {
     "oneClick": false,
-    "allowToChangeInstallationDirectory": true,
-    "createDesktopShortcut": true,
-    "createStartMenuShortcut": true,
-    "shortcutName": "PQN Party Queen"
+    "perMachine": false,
+    "runAfterFinish": true,
+    "shortcutName": "PQN Party Queen",
+    "warningsAsErrors": false,
+    "additionalLightArgs": ["-sval"]
   }
 }

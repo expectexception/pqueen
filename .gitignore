@@ -21,6 +21,7 @@
 /build
 /release
 /dist
+/dist-msi
 
 # misc
 .DS_Store
